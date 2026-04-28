@@ -5,5 +5,16 @@ from sqlalchemy.orm import Session
 from database import get_db
 from models import Categoria, Produto
 
+app = FastAPI(title="Gerenciador de Loja")
 
-app = FastAPI(title="")
+templates = Jinja2Templates(directory="templated")
+
+@app.get("/")
+def home(request:Request):
+    return templates.TemplateResponse(
+        request,
+        "index.html",
+        {"request": request}
+    )
+
+@app.get("/")
