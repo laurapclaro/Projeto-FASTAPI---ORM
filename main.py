@@ -17,4 +17,6 @@ def home(request:Request):
         {"request": request}
     )
 
-@app.get("/")
+@app.get("/produtos/cadastro", response_class=HTMLResponse)
+def exibir_cadastro(request: Request):
+    return templates.TemplateResponse(request, )
