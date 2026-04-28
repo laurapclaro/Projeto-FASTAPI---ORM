@@ -22,7 +22,7 @@ class Produto(Base):
     estoque = Column(Integer, nullable=False)
     categoria_id = Column(Integer, ForeignKey("categorias.id"))
 
-    categorias = relationship("Categoria", back_populates="produtos")
+    categoria = relationship("Categoria", back_populates="produtos")
 
     def __repr__(self):
         return f"Produto - id: {self.id} - Nome: {self.nome} - Preço: {self.preco} - Estoque: {self.estoque} - Categoria_id: {self.categoria_id} "
